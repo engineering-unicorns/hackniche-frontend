@@ -1,0 +1,14 @@
+---
+import { twMerge } from "tailwind-merge";
+interface Props {
+  url: string;
+  className?: string;
+}
+
+const { className = "", url } = Astro.props;
+---
+
+<div class={twMerge(className)}>
+  <dotlottie-player src={url} background="transparent" speed="1" loop autoplay
+  ></dotlottie-player>
+</div>
