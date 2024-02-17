@@ -3,59 +3,45 @@ import Hero from "@/components/widgets/Hero.astro";
 import Layout from "../layouts/Layout.astro";
 import TextView from "@/components/widgets/TextView.tsx";
 import Marquee from "@/components/widgets/Marquee.tsx";
-import Historical from "@/components/widgets/Historical.tsx";
+import Historical from "@/components/widgets/Historical.astro";
+import Wishlist from "@/components/widgets/Wishlist.astro";
+import Ticker from "@/components/widgets/Ticker.astro";
+import Candle from "@/components/widgets/Candle.astro";
 import { MarketOverview } from "react-ts-tradingview-widgets";
+import { Meter } from "@/components/widgets/Meter.tsx"
 // import Embed from '@/components/widgets/Embed';
-const data = (
-  await (await fetch("http://localhost:3000/benchmark")).json()
-).flat();
+// const data = (
+//   await (await fetch("http://localhost:3000/benchmark")).json()
+// ).flat();
 ---
 
 <Layout title="Dashboard">
     <div class="flex flex-col">
-      <div class="flex flex-col md:flex-row"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
+      <div class="flex gap-48"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
         <div class="w-full md:w-1/2 lg:pl-36"> <!-- Use full width on mobile and half width on medium and larger screens with left padding for lg screens -->
           <div class="flex flex-col md:flex-row justify-between md:gap-5"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
-            <TextView title={data[0][0].name} value={data[0][0].current} />
+            <!-- <TextView title={data[0][0].name} value={data[0][0].current} />
             <TextView title={data[1][0].name} value={data[1][0].current} />
-            <TextView title="Bank Nifty" value={data[2]} />
+            <TextView title="Bank Nifty" value={data[2]} /> -->
+
+            <TextView title="NSE" value="7666" />
+            <TextView title="Sensex" value="87999" />
+            <TextView title="Bank Nifty" value="88787" />
           </div>
           <div class="py-5">
             <Marquee client:load />
           </div>
+          <div class="text-xl mb-2 ml-2">Wishlist</div>
+          <Wishlist />
         </div>
- <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-    <div class="tradingview-widget-container__widget"></div>
-    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
-    {
-    "colorTheme": "dark",
-    "dateRange": "12M",
-    "exchange": "US",
-    "showChart": true,
-    "locale": "en",
-    "largeChartUrl": "",
-    "isTransparent": false,
-    "showSymbolLogo": false,
-    "showFloatingTooltip": false,
-    "width": "400",
-    "height": "550",
-    "plotLineColorGrowing": "rgba(41, 98, 255, 1)",
-    "plotLineColorFalling": "rgba(41, 98, 255, 1)",
-    "gridLineColor": "rgba(240, 243, 250, 0)",
-    "scaleFontColor": "rgba(106, 109, 120, 1)",
-    "belowLineFillColorGrowing": "rgba(41, 98, 255, 0.12)",
-    "belowLineFillColorFalling": "rgba(41, 98, 255, 0.12)",
-    "belowLineFillColorGrowingBottom": "rgba(41, 98, 255, 0)",
-    "belowLineFillColorFallingBottom": "rgba(41, 98, 255, 0)",
-    "symbolActiveColor": "rgba(41, 98, 255, 0.12)"
-  }
-    </script>
-  </div>
-  <!-- TradingView Widget END -->
-  <!-- TradingView Widget END -->
-      </div>
-      <!-- <MarketOverview colorTheme="dark" height={400} width="100%" showFloatingTooltip></MarketOverview> -->
+        <Historical />
+        
+    </div>
+    <Ticker />
+    <div class="flex pt-5 ml-5">
+      <Candle/>
+      <Meter /> 
+
     </div>
   </Layout>
   
