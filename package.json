@@ -20,6 +20,8 @@
     "astro": "^4.4.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "lucia": "^3.0.1",
+    "oslo": "^1.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.2.1",

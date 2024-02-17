@@ -2,6 +2,7 @@
 import "@/styles/globals.css";
 import Header from "@/components/widgets/Header.astro";
 import Footer from "@/components/widgets/Footer.astro";
+import MouseGlow from '@/components/common/MouseGlow';
 interface Props {
   title: string;
 }
@@ -22,6 +23,7 @@ const { title } = Astro.props;
   <body>
     <div class="min-h-screen flex flex-col">
       <Header />
+      <MouseGlow client:load/>
       <main class="flex-1">
         <slot />
       </main>

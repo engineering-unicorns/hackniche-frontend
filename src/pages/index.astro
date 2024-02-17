@@ -1,8 +1,10 @@
 ---
 import Hero from '@/components/widgets/Hero.astro';
 import Layout from '../layouts/Layout.astro';
+import Embed from '@/components/widgets/Embed';
 ---
 
 <Layout title="Welcome to Astro.">
     <Hero />
+    <Embed ticker={"APOLLOHOSP"} client:load/>
 </Layout>
