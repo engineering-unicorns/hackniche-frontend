@@ -8,8 +8,7 @@ import { MarketOverview } from "react-ts-tradingview-widgets";
 // import Embed from '@/components/widgets/Embed';
 const data = (
   await (await fetch("http://localhost:3000/benchmark")).json()
-)[0].flat();
-console.log(data);
+).flat();
 ---
 
 <Layout title="Dashboard">
@@ -17,9 +16,9 @@ console.log(data);
       <div class="flex flex-col md:flex-row"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
         <div class="w-full md:w-1/2 lg:pl-36"> <!-- Use full width on mobile and half width on medium and larger screens with left padding for lg screens -->
           <div class="flex flex-col md:flex-row justify-between md:gap-5"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
-            <TextView title={data[0].name} value={data[0].current} />
-            <TextView title={data[1].name} value={data[1].current} />
-            <TextView title="Something else" value="9877" />
+            <TextView title={data[0][0].name} value={data[0][0].current} />
+            <TextView title={data[1][0].name} value={data[1][0].current} />
+            <TextView title="Bank Nifty" value={data[2]} />
           </div>
           <div class="py-5">
             <Marquee client:load />
