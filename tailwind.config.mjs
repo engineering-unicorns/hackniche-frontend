@@ -12,6 +12,10 @@ module.exports = {
       },
     },
     extend: {
+      cursor: {
+        default: "url(/cursors/pointer.cur), default",
+        pointer: "url(/cursors/link.cur), pointer",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
