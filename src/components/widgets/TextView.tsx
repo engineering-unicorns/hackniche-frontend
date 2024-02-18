@@ -33,7 +33,7 @@ import {
     </svg>
   </CardHeader>
   <CardContent>
-    <div className="text-2xl font-bold">{value}</div>
+    <div className="text-2xl font-bold">{value}</div>                                       
   </CardContent>
 </Card>
 )}

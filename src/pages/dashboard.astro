@@ -8,7 +8,7 @@ import Wishlist from "@/components/widgets/Wishlist.astro";
 import Ticker from "@/components/widgets/Ticker.astro";
 import Candle from "@/components/widgets/Candle.astro";
 import { MarketOverview } from "react-ts-tradingview-widgets";
-import { Meter } from "@/components/widgets/Meter.tsx"
+import { Meter } from "@/components/widgets/Meter.tsx";
 // import Embed from '@/components/widgets/Embed';
 // const data = (
 //   await (await fetch("http://localhost:3000/benchmark")).json()
@@ -16,32 +16,31 @@ import { Meter } from "@/components/widgets/Meter.tsx"
 ---
 
 <Layout title="Dashboard">
-    <div class="flex flex-col">
-      <div class="flex gap-48"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
-        <div class="w-full md:w-1/2 lg:pl-36"> <!-- Use full width on mobile and half width on medium and larger screens with left padding for lg screens -->
-          <div class="flex flex-col md:flex-row justify-between md:gap-5"> <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
-            <!-- <TextView title={data[0][0].name} value={data[0][0].current} />
+  <div class="flex flex-col">
+    <div class="flex gap-48">
+      <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
+      <div class="w-full md:w-1/2">
+        <!-- Use full width on mobile and half width on medium and larger screens with left padding for lg screens -->
+        <div class="flex flex-col md:flex-row justify-between md:gap-5">
+          <!-- Use flex-col on mobile and flex-row on medium and larger screens -->
+          <!-- <TextView title={data[0][0].name} value={data[0][0].current} />
             <TextView title={data[1][0].name} value={data[1][0].current} />
             <TextView title="Bank Nifty" value={data[2]} /> -->
 
-            <TextView title="NSE" value="7666" />
-            <TextView title="Sensex" value="87999" />
-            <TextView title="Bank Nifty" value="88787" />
-          </div>
-          <div class="py-5">
-            <Marquee client:load />
-          </div>
-          <div class="text-xl mb-2 ml-2">Wishlist</div>
-          <Wishlist />
+          <TextView title="NSE" value="7666" />
+          <TextView title="Sensex" value="87999" />
+          <TextView title="Bank Nifty" value="88787" />
         </div>
-        <Historical />
-        
+        <div class="py-5">
+          <Marquee client:load />
+        </div>
+        <div class="text-xl mb-2 ml-2">Wishlist</div>
+        <Wishlist />
+      </div>
+      <Historical />
     </div>
     <Ticker />
-    <div class="flex pt-5 ml-5">
-      <Candle/>
-      <Meter /> 
-
-    </div>
-  </Layout>
-  
+    <Candle />
+    <Meter />
+  </div>
+</Layout>

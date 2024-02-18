@@ -37,7 +37,12 @@ export function InputForm() {
 
   function onSubmit(data: z.infer<typeof FormSchema>) {
     toast({
-      title: "Logged in!",
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+        </pre>
+      ),
     });
     window.location.href = "/dashboard";
   }

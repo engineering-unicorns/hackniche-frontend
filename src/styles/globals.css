@@ -38,9 +38,13 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border cursor-default;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  a {
+    @apply cursor-pointer;
   }
 }
