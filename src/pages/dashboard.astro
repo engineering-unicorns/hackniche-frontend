@@ -7,6 +7,7 @@ import Historical from "@/components/widgets/Historical.astro";
 import Wishlist from "@/components/widgets/Wishlist.astro";
 import Ticker from "@/components/widgets/Ticker.astro";
 import Candle from "@/components/widgets/Candle.astro";
+import Forex from "@/components/widgets/Forex.astro";
 import { MarketOverview } from "react-ts-tradingview-widgets";
 import { Meter } from "@/components/widgets/Meter.tsx"
 // import Embed from '@/components/widgets/Embed';
@@ -40,7 +41,8 @@ import { Meter } from "@/components/widgets/Meter.tsx"
     <Ticker />
     <div class="flex pt-5 ml-5">
       <Candle/>
-      <Meter /> 
+      <!-- <Meter />  -->
+      <Forex />
 
     </div>
   </Layout>
