@@ -6,8 +6,9 @@ import Marquee from "@/components/widgets/Marquee.tsx";
 import Historical from "@/components/widgets/Historical.astro";
 import Wishlist from "@/components/widgets/Wishlist.astro";
 import Ticker from "@/components/widgets/Ticker.astro";
-import Candle from "@/components/widgets/Candle.astro";
+import Candle from "@/components/widgets/Comparision";
 import Forex from "@/components/widgets/Forex.astro";
+import BasicArea from "@/components/widgets/BasicArea.jsx"
 import { MarketOverview } from "react-ts-tradingview-widgets";
 import { Meter } from "@/components/widgets/Meter.tsx";
 // import Embed from '@/components/widgets/Embed';
@@ -41,12 +42,12 @@ import { Meter } from "@/components/widgets/Meter.tsx";
       <Historical />
     </div>
     <Ticker />
-    <div class="flex">
-      
-    <Candle />
-    <!-- <Meter /> -->
-    <Forex />
+    <div class="my-12">
+    <Forex  />
     </div>
-    
+    <div class="flex gap-2">
+      <Candle client:load/>
+      <BasicArea client:load/>
+    </div>
   </div>
 </Layout>
